@@ -18,6 +18,7 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 10px;
+            grid-auto-rows: 300px;
         }
         
         .media-item {
@@ -26,31 +27,36 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            aspect-ratio: 1 / 1;
+            width: 100%;
+        }
+
+        .media-item:not(.portrait) img {
+            height: 300px;
+        }
+        
+        .media-item.portrait img {
+            height: 620px;
         }
         
         .media-item:hover {
             transform: scale(1.03);
         }
         
-        /* Style cho ảnh */
         .media-item img {
             width: 100%;
-            height: 100%;
             object-fit: cover;
             display: block;
         }
         
-        /* Style cho video */
         .media-item video {
             width: 100%;
             height: 100%;
             background: #000;
             display: block;
+            object-fit: cover;
         }
         
         .portrait {
-            aspect-ratio: 9/16;
             grid-row: span 2;
         }
         
@@ -62,7 +68,6 @@
             font-weight: bold;
         }
         
-        /* Khôi phục gallery-caption */
         .gallery-caption {
             position: absolute;
             bottom: 0;
@@ -80,7 +85,6 @@
             opacity: 1;
         }
         
-        /* Nút play cho video */
         .video-play-icon {
             position: absolute;
             top: 50%;
@@ -95,9 +99,16 @@
         @media (max-width: 768px) {
             .media-container {
                 grid-template-columns: 1fr;
+                grid-auto-rows: auto;
             }
+            
             .portrait {
                 grid-row: span 1;
+            }
+            
+            .media-item img {
+                height: auto !important;
+                aspect-ratio: 1/1;
             }
         }
     </style>
@@ -131,58 +142,112 @@
     </header>
 
     <div class="content">
-        <!-- Phần ảnh -->
         <div class="content-section">
-            <div class="section-title">Khoảnh Khắc</div>
+            <div class="section-title">KHOẢNH KHẮC</div>
             <div class="media-container">
-                <!-- Ảnh ngang 1 -->
                 <div class="media-item">
-                    <img src="img_data/12/activity1.jpg">
+                    <img src="img_data/12/03.jpg">
+                    <div class="gallery-caption">Ảnh lớp</div>
+                </div>
+                
+                <div class="media-item portrait">
+                    <img src="img_data/12/01.jpg">
                     <div class="gallery-caption">Hoạt động ngoại khóa</div>
                 </div>
                 
-                <!-- Ảnh dọc 1 -->
-                <div class="media-item portrait">
-                    <img src="img_data/12/portrait1.jpg">
-                    <div class="gallery-caption">Kỷ niệm lớp</div>
+                <div class="media-item">
+                    <img src="img_data/12/04.jpg">
+                    <div class="gallery-caption">Giờ học</div>
                 </div>
                 
-                <!-- Ảnh ngang 2 -->
+                <div class="media-item portrait">
+                    <img src="img_data/12/02.jpg">
+                    <div class="gallery-caption">Chụp kỷ yếu</div>
+                </div>
+                
                 <div class="media-item">
-                    <img src="img_data/12/classroom.jpg">
-                    <div class="gallery-caption">Giờ học trên lớp</div>
+                    <img src="img_data/12/05.jpg">
+                    <div class="gallery-caption">Sinh nhật cô giáo</div>
+                </div>
+                
+                <div class="media-item portrait">
+                    <img src="img_data/12/08.jpg">
+                    <div class="gallery-caption">Hội trại</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/12/07.jpg">
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/12/06.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
                 </div>
             </div>
         </div>
-        
-        <!-- Phần video -->
+
         <div class="content-section">
-            <div class="section-title">Kỷ Niệm</div>
+            <div class="section-title">KỈ NIỆM</div>
             <div class="media-container">
-                <!-- Video ngang 1 -->
                 <div class="media-item">
                     <video controls>
-                        <source src="vid_data/12/video1.mp4" type="video/mp4">
+                        <source src="vid_data/12/03.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Hoạt động lớp</div>
                 </div>
                 
-                <!-- Video dọc 1 -->
                 <div class="media-item portrait">
                     <video controls>
-                        <source src="vid_data/12/video2.mp4" type="video/mp4">
+                        <source src="vid_data/12/01.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Chuyến dã ngoại</div>
                 </div>
                 
-                <!-- Video ngang 2 -->
-                <div class="media-item">
+                <div class="media-item portrait">
                     <video controls>
-                        <source src="vid_data/12/video3.mp4" type="video/mp4">
+                        <source src="vid_data/12/02.mp4" type="video/mp4">
                     </video>
                     <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+				
+				<div class="media-item portrait">
+                    <video controls>
+                        <source src="vid_data/12/04.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+				
+				<div class="media-item portrait">
+                    <video controls>
+                        <source src="vid_data/12/05.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+				
+				<div class="media-item portrait">
+                    <video controls>
+                        <source src="vid_data/12/06.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+				
+				<div class="media-item portrait">
+                    <video controls>
+                        <source src="vid_data/12/03.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-play-icon">▶</div>
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
                 </div>
             </div>
+			
+			
         </div>
     </div>
 
