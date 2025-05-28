@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kỉ Yếu | 2024-2025</title>
+    <title>Kỉ Yếu</title>
     <link rel="icon" type="image/png" href="img_data/logo.png">
     <link rel="stylesheet" href="HBO.css">
     <style>
@@ -18,6 +18,7 @@
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 20px;
             margin-top: 10px;
+            grid-auto-rows: 300px;
         }
         
         .media-item {
@@ -26,31 +27,36 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
-            aspect-ratio: 1 / 1;
+            width: 100%;
+        }
+
+        .media-item:not(.portrait) img {
+            height: 300px;
+        }
+        
+        .media-item.portrait img {
+            height: 620px;
         }
         
         .media-item:hover {
             transform: scale(1.03);
         }
         
-        /* Style cho ảnh */
         .media-item img {
             width: 100%;
-            height: 100%;
             object-fit: cover;
             display: block;
         }
         
-        /* Style cho video */
         .media-item video {
             width: 100%;
             height: 100%;
             background: #000;
             display: block;
+            object-fit: cover;
         }
         
         .portrait {
-            aspect-ratio: 9/16;
             grid-row: span 2;
         }
         
@@ -62,7 +68,11 @@
             font-weight: bold;
         }
         
-        /* Khôi phục gallery-caption */
+		.full-width-video {
+            grid-column: 1 / -1;
+            height: 500px;
+        }
+		
         .gallery-caption {
             position: absolute;
             bottom: 0;
@@ -80,26 +90,26 @@
             opacity: 1;
         }
         
-        /* Nút play cho video */
-        .video-play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 2rem;
-            opacity: 0.8;
-            pointer-events: none;
-        }
-        
         @media (max-width: 768px) {
             .media-container {
                 grid-template-columns: 1fr;
+                grid-auto-rows: auto;
             }
+            
             .portrait {
                 grid-row: span 1;
             }
+            
+            .media-item img {
+                height: auto !important;
+                aspect-ratio: 1/1;
+            }
         }
+		@media (max-width: 768px) {
+            .full-width-video {
+                height: 300px;
+        }
+}
     </style>
 </head>
 <body>
@@ -125,64 +135,143 @@
 
     <header>
         <div class="header-container">
-            <img src="img_data/ki_yeu/title.jpg" class="header-img" style="object-position: 50% 48%;">
-            <div class="slogan">A2-K52 | Kỉ Yếu<br>KẾT THÚC HÀNH TRÌNH DƯỚI MÁI TRƯỜNG THPT HOÀNH BỒ</div>
+            <img src="img_data/ki_yeu/title.jpg" class="header-img" style="object-position: 50% 50%;">
+            <div class="slogan">A2-K52 | 2025-???<br>KẾT THÚC HÀNH TRÌNH DƯỚI MÁI TRƯỜNG THPT HOÀNH BỒ</div>
         </div>
     </header>
 
     <div class="content">
-        <!-- Phần ảnh -->
         <div class="content-section">
-            <div class="section-title">Khoảnh Khắc</div>
+            <div class="section-title">KHOẢNH KHẮC</div>
             <div class="media-container">
-                <!-- Ảnh ngang 1 -->
                 <div class="media-item">
-                    <img src="img_data/ki_yeu/activity1.jpg">
+                    <img src="img_data/ki_yeu/01.jpg">
+                    <div class="gallery-caption">Ảnh lớp</div>
+                </div>
+                
+                <div class="media-item portrait">
+                    <img src="img_data/ki_yeu/02.jpg">
                     <div class="gallery-caption">Hoạt động ngoại khóa</div>
                 </div>
                 
-                <!-- Ảnh dọc 1 -->
-                <div class="media-item portrait">
-                    <img src="img_data/ki_yeu/portrait1.jpg">
-                    <div class="gallery-caption">Kỷ niệm lớp</div>
+                <div class="media-item">
+                    <img src="img_data/ki_yeu/03.jpg">
+                    <div class="gallery-caption">Giờ học</div>
                 </div>
                 
-                <!-- Ảnh ngang 2 -->
                 <div class="media-item">
-                    <img src="img_data/ki_yeu/classroom.jpg">
-                    <div class="gallery-caption">Giờ học trên lớp</div>
+                    <img src="img_data/ki_yeu/04.jpg">
+                    <div class="gallery-caption">Chụp kỷ yếu</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/ki_yeu/05.jpg">
+                    <div class="gallery-caption">Sinh nhật cô giáo</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/ki_yeu/06.jpg">
+                    <div class="gallery-caption">Hội trại</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/ki_yeu/07.jpg">
+                    <div class="gallery-caption">Lễ tốt nghiệp</div>
+                </div>
+                
+                <div class="media-item">
+                    <img src="img_data/ki_yeu/08.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/09.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/010.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/011.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/012.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/013.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/014.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/015.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/016.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/017.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/018.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/019.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/020.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/021.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item portrait">
+                    <img src="img_data/ki_yeu/022.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
+                </div>
+				
+				<div class="media-item">
+                    <img src="img_data/ki_yeu/023.jpg">
+                    <div class="gallery-caption">Tập thể lớp</div>
                 </div>
             </div>
         </div>
-        
-        <!-- Phần video -->
+
         <div class="content-section">
-            <div class="section-title">Kỷ Niệm</div>
+            <div class="section-title">KỈ NIỆM</div>
             <div class="media-container">
-                <!-- Video ngang 1 -->
-                <div class="media-item">
+                <div class="media-item full-width-video">
                     <video controls>
-                        <source src="vid_data/ki_yeu/video1.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-play-icon">▶</div>
-                </div>
-                
-                <!-- Video dọc 1 -->
-                <div class="media-item portrait">
-                    <video controls>
-                        <source src="vid_data/ki_yeu/video2.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-play-icon">▶</div>
-                </div>
-                
-                <!-- Video ngang 2 -->
-                <div class="media-item">
-                    <video controls>
-                        <source src="vid_data/ki_yeu/video3.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-play-icon">▶</div>
-                </div>
+                        <source src="vid_data/ki_yeu/01.mp4" type="video/mp4">
+                    </video>               
+                    <div class="gallery-caption">KỈ NIỆM CUỐI CÙNG</div>
             </div>
+			
+			
         </div>
     </div>
 
