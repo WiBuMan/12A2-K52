@@ -1,0 +1,252 @@
+/* Tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+:target::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+}
+
+/* Navbar */
+.navbar {
+    background: #4CAF50;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+.navbar img {
+    max-width: 50px;
+    height: auto;
+    margin-right: 20px;
+}
+.nav-links {
+    display: flex;
+    gap: 15px;
+    transition: 0.3s;
+    flex-grow: 1;
+}
+.navbar a {
+    color: white;
+    padding: 12px 15px;
+    text-decoration: none;
+    font-size: clamp(16px, 1.2vw, 18px);
+    white-space: nowrap;
+    transition: background 0.3s;
+}
+.navbar a:hover {
+    background: #4ca04d;
+    border-radius: 5px;
+}
+
+/* Menu icon (mobile) */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: 10px;
+}
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+#menuToggle {
+    display: none;
+}
+
+/* Header */
+header {
+    background: transparent;
+    color: black;
+    padding: 60px 0 0;
+    text-align: center;
+}
+.header-container {
+    position: relative;
+    width: 100%;
+    height: 30vw;
+}
+
+.header-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 70%
+}
+
+.slogan {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: clamp(14px, 1.5vw, 20px);
+    text-align: center;
+    font-weight: bold;
+    width: 90%;
+    max-width: 600px;
+}
+h1 {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 3vw;
+}
+
+/* Nội dung */
+.intro-text {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+.intro-text h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    color: #2c3e50;
+}
+.content {
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 60px auto 0;
+}
+.section {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+	text-align: center;
+}
+.section a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    font-size: 2vw;
+}
+.section a img {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+.section a img:hover {
+    transform: scale(1.03);
+}
+img[src="img_data/10/title.jpg"] {
+    object-position: 50% 90%;
+}
+img[src="img_data/11/title.jpg"] {
+    object-position: 50% 80%;
+}
+img[src="img_data/12/title.jpg"] {
+    object-position: 50% 90%;
+}
+img[src="img_data/ki_yeu/title.jpg"] {
+    object-position: 50% 60%;
+}
+
+/* Footer */
+footer {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-text {
+    text-align: left;
+    max-width: 50%;
+}
+.footer-map {
+    width: 95vw;
+}
+.footer-map iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: flex;
+        margin-right: auto;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #4CAF50;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 10px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    #menuToggle:checked ~ .nav-links {
+        display: flex;
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: left;
+        padding: 15px 20px;
+        font-size: 16px;
+    }
+
+    #menuToggle:checked + .menu-icon span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    #menuToggle:checked + .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    #menuToggle:checked + .menu-icon span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .section {
+        width: 90%;
+    }
+    .slogan {
+        font-size: 14px;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-text, .footer-map {
+        max-width: 100%;
+    }
+}
