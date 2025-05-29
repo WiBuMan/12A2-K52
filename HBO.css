@@ -240,8 +240,6 @@ footer {
     .menu-icon {
         display: flex;
         margin-right: 40px;
-        padding: 10px;
-        order: 1;
     }
     .nav-links {
         display: none;
