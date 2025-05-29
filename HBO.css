@@ -14,13 +14,12 @@ body::before {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: url('img_data/bg.jpg') center/cover no-repeat;
+    background: url('img_data/bg.jpg') center center / cover no-repeat fixed;
     filter: brightness(0.5) blur(3px);
     z-index: -1;
     pointer-events: none;
 }
 
-}
 html {
     scroll-behavior: smooth;
 }
@@ -137,11 +136,12 @@ header {
     text-align: center;
     font-size: 1.2rem;
     line-height: 1.6;
+	color: #ffffff;
 }
 .intro-text h2 {
     margin-bottom: 10px;
     font-size: 2rem;
-    color: #2c3e50;
+    color: #5cff62;
 }
 .content {
     padding: 20px;
