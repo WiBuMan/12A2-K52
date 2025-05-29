@@ -30,7 +30,6 @@ html {
     margin-top: -80px;
 }
 
-/* Navbar */
 .navbar {
     background: #4CAF50;
     display: flex;
@@ -47,7 +46,7 @@ html {
 .logo-container {
     display: flex;
     align-items: center;
-    flex-shrink: 0; /* Ngăn logo co lại */
+    flex-shrink: 0;
 }
 .navbar img {
     max-width: 50px;
@@ -73,7 +72,6 @@ html {
     border-radius: 5px;
 }
 
-/* Menu mobile */
 .menu-icon {
     display: none;
     flex-direction: column;
@@ -91,7 +89,6 @@ html {
     display: none;
 }
 
-/* Header */
 header {
     background: transparent;
     color: black;
@@ -128,7 +125,6 @@ header {
     max-width: 700px;
 }
 
-/* Nội dung */
 .intro-text {
     max-width: 1000px;
     margin: 40px auto;
@@ -196,7 +192,6 @@ img[src="img_data/ki_yeu/title.jpg"] {
     object-position: 50% 60%;
 }
 
-/* Footer */
 footer {
     background: #4CAF50;
     color: white;
@@ -236,7 +231,6 @@ footer {
     }
 }
 
-/* Responsive desktop */
 @media (min-width: 769px) {
     .navbar {
         height: 70px;
@@ -252,7 +246,6 @@ footer {
     }
 }
 
-/* Responsive mobile */
 @media (max-width: 768px) {
     .menu-icon {
         display: flex;
