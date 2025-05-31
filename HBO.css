@@ -151,7 +151,7 @@ header {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background: rgba(249, 249, 249, 0.7);
+    background: rgba(249, 249, 249, 0.4);
     text-align: center;
 }
 @media (max-width: 768px) {
